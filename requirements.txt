@@ -1,0 +1,258 @@
+
+Build a production-ready iOS app with the following requirements:
+
+Product
+
+Create an iOS app called “SickDay Tracker” that helps users:
+
+log quick daily health factors (sleep, stress, exercise, sugar, exposure, etc.)
+
+track sickness episodes (cold/cough/fever/sinus/allergy/other)
+
+view simple insights (counts, duration, symptom frequency, trigger patterns)
+
+export a doctor-friendly PDF summary and CSV.
+
+This app must not provide medical advice. Include an onboarding disclaimer.
+
+Platform / Tech
+
+Minimum iOS: iOS 17+
+
+Language: Swift
+
+UI: SwiftUI
+
+Architecture: MVVM
+
+Persistence: SwiftData (local only, no CloudKit/iCloud, no servers)
+
+Charts: Swift Charts
+
+PDF export: use native iOS PDF rendering (e.g., UIGraphicsPDFRenderer)
+
+Local notifications: optional, only if cleanly implemented (no need for v1)
+
+App Structure
+
+Use a TabBar with 4 tabs:
+
+Today
+
+Episodes
+
+Insights
+
+Settings
+
+Today tab
+
+Show summary cards:
+
+“Log Today” CTA
+
+current logging streak
+
+status of current episode (if one is active)
+
+Daily log form fields (one per date; edit if exists):
+
+date (default today)
+
+sleep hours (0–12, step 0.25)
+
+sleep quality (1–5)
+
+stress (1–5)
+
+exercise minutes (0–300) + type (walk/gym/yoga/other)
+
+sugar intake (low/medium/high)
+
+alcohol (none/some)
+
+office day (yes/no)
+
+sick contact exposure (yes/no)
+
+humidifier used (yes/no)
+
+notes (optional)
+
+Ensure “one entry per date” constraint.
+
+Episodes tab
+
+List all episodes (most recent first)
+
+Create/edit episode:
+
+start date (required)
+
+end date (optional until recovered)
+
+type: cold/cough/fever/sinus/allergy/other
+
+symptoms multi-select:
+
+cough, sore throat, runny nose, sneezing, fever, fatigue, body aches, headache
+
+optional: mucus color (none/clear/yellow/green) with a note that color isn’t diagnostic
+
+severity (1–5)
+
+worst time: morning/night/all day
+
+medications used (free-text tags)
+
+doctor visit + test results (optional)
+
+notes
+
+Support “active episode” with no end date.
+
+Prevent overlapping episodes (show warning; allow override with confirmation).
+
+Insights tab
+
+Provide non-medical insights (clear disclaimer):
+
+episodes in last 30/90/365 days
+
+average duration (exclude active episodes or treat as “ongoing”)
+
+symptom frequency (bar chart)
+
+episodes timeline (simple timeline view or chart)
+
+“Potential triggers”:
+
+For each episode, look at the 7 days before start date, compute averages/counts:
+
+avg sleep hours
+
+avg stress
+
+total office days
+
+total sick-contact days
+
+humidifier usage days
+
+Compare to baseline: last 60 days excluding episode windows
+
+Display as simple comparisons (no causal claims).
+
+Settings tab
+
+Export:
+
+PDF summary for last 90 days:
+
+episode list + dates/durations
+
+symptom frequency
+
+key averages: sleep, stress, exercise, sugar distribution
+
+CSV export for daily logs and episodes
+
+App info:
+
+privacy: “Data stays on device”
+
+disclaimer: “Not medical advice”
+
+Optional: “Reset all data” with confirmation.
+
+UX / Accessibility
+
+Clean, minimal UI; consistent spacing; calm typography.
+
+Support Dynamic Type and VoiceOver labels for all interactive controls.
+
+Avoid clutter. Prioritize speed of logging.
+
+Data Model (SwiftData)
+
+Define models with appropriate relationships and indexes:
+
+DailyLog (unique by date)
+
+SicknessEpisode (start/end, type, severity, symptoms, etc.)
+
+Consider an enum or separate model for symptom selection storage.
+
+GitHub Repo Requirements
+
+Deliver a complete Xcode project ready to push to GitHub:
+
+project builds cleanly with no manual steps
+
+include .gitignore for Xcode
+
+include README.md with:
+
+overview
+
+feature list
+
+setup/build steps
+
+privacy/disclaimer notes
+
+screenshot placeholders
+
+include LICENSE (MIT)
+
+Testing
+
+Add:
+
+Unit tests for:
+
+episode duration calculation
+
+overlap detection
+
+7-day trigger window aggregation
+
+baseline computation excluding episode windows
+
+UI tests for:
+
+creating a daily log
+
+creating an episode
+
+exporting PDF (at least verify export action completes)
+
+CI
+
+Add GitHub Actions workflow that:
+
+runs on push and PR
+
+builds and runs tests via xcodebuild test on an iOS 17+ simulator
+
+fails the build on warnings if feasible
+
+Non-Functional
+
+No analytics, no ads, no network calls.
+
+App Store safe: no private APIs.
+
+Include onboarding screen on first launch to acknowledge disclaimer + privacy statement.
+
+Deliver:
+
+full source code with MVVM
+
+models, views, viewmodels, and services (PDF/CSV export)
+
+tests
+
+GitHub Actions workflow
+
+README
