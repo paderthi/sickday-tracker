@@ -11,6 +11,9 @@ final class DailyLog {
     var exerciseType: ExerciseType
     var sugarIntake: SugarLevel
     var alcohol: AlcoholConsumption
+    var fruitsServings: Int // 0-10
+    var proteinGrams: Int // 0-200
+    var supplements: [String] // e.g., "Vitamin D3", "B12", "Multivitamin"
     var officeDay: Bool
     var sickContactExposure: Bool
     var humidifierUsed: Bool
@@ -27,6 +30,9 @@ final class DailyLog {
         exerciseType: ExerciseType = .none,
         sugarIntake: SugarLevel = .low,
         alcohol: AlcoholConsumption = .none,
+        fruitsServings: Int = 0,
+        proteinGrams: Int = 0,
+        supplements: [String] = [],
         officeDay: Bool = false,
         sickContactExposure: Bool = false,
         humidifierUsed: Bool = false,
@@ -40,6 +46,9 @@ final class DailyLog {
         self.exerciseType = exerciseType
         self.sugarIntake = sugarIntake
         self.alcohol = alcohol
+        self.fruitsServings = fruitsServings
+        self.proteinGrams = proteinGrams
+        self.supplements = supplements
         self.officeDay = officeDay
         self.sickContactExposure = sickContactExposure
         self.humidifierUsed = humidifierUsed

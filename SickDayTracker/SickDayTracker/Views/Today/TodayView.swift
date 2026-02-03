@@ -155,6 +155,15 @@ struct TodayView: View {
                     logRow(icon: "figure.run", label: "Exercise", value: "\(log.exerciseMinutes) min", detail: log.exerciseType.rawValue)
                 }
                 logRow(icon: "fork.knife", label: "Sugar", value: log.sugarIntake.rawValue, detail: nil)
+                if log.fruitsServings > 0 {
+                    logRow(icon: "leaf.fill", label: "Fruits", value: "\(log.fruitsServings) servings", detail: nil)
+                }
+                if log.proteinGrams > 0 {
+                    logRow(icon: "flame.fill", label: "Protein", value: "\(log.proteinGrams)g", detail: nil)
+                }
+                if !log.supplements.isEmpty {
+                    logRow(icon: "pills.fill", label: "Supplements", value: "\(log.supplements.count)", detail: log.supplements.joined(separator: ", "))
+                }
 
                 if log.officeDay || log.sickContactExposure || log.humidifierUsed {
                     Divider()

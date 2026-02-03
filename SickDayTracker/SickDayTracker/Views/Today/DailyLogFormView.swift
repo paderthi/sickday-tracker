@@ -5,6 +5,8 @@ struct DailyLogFormView: View {
     @Environment(\.dismiss) private var dismiss
     let onSave: () -> Void
 
+    @State private var supplementInput = ""
+
     var body: some View {
         NavigationStack {
             Form {
@@ -56,6 +58,38 @@ struct DailyLogFormView: View {
                         ForEach(AlcoholConsumption.allCases, id: \.self) { consumption in
                             Text(consumption.rawValue).tag(consumption)
                         }
+                    }
+
+                    HStack {
+                        Text("Fruits Servings")
+                        Spacer()
+                        Stepper("\(log.fruitsServings)", value: $log.fruitsServings, in: 0...10)
+                    }
+
+                    HStack {
+                        Text("Protein (grams)")
+                        Spacer()
+                        Stepper("\(log.proteinGrams)g", value: $log.proteinGrams, in: 0...200, step: 5)
+                    }
+                }
+
+                Section("Supplements") {
+                    ForEach(log.supplements, id: \.self) { supplement in
+                        Text(supplement)
+                    }
+                    .onDelete { indexSet in
+                        log.supplements.remove(atOffsets: indexSet)
+                    }
+
+                    HStack {
+                        TextField("Add supplement (e.g., Vitamin D3)", text: $supplementInput)
+                        Button("Add") {
+                            if !supplementInput.isEmpty {
+                                log.supplements.append(supplementInput)
+                                supplementInput = ""
+                            }
+                        }
+                        .disabled(supplementInput.isEmpty)
                     }
                 }
 
