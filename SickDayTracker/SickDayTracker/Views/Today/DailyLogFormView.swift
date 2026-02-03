@@ -12,7 +12,7 @@ struct DailyLogFormView: View {
                     HStack {
                         Text("Hours")
                         Spacer()
-                        Stepper("\(log.sleepHours, specifier: "%.2f")", value: $log.sleepHours, in: 0...12, step: 0.25)
+                        Stepper(String(format: "%.2f", log.sleepHours), value: $log.sleepHours, in: 0...12, step: 0.25)
                     }
 
                     Picker("Quality", selection: $log.sleepQuality) {

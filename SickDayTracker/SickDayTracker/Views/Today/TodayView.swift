@@ -149,7 +149,7 @@ struct TodayView: View {
             Divider()
 
             VStack(alignment: .leading, spacing: 8) {
-                logRow(icon: "bed.double.fill", label: "Sleep", value: "\(log.sleepHours, specifier: "%.1f")h", detail: "Quality: \(log.sleepQuality)/5")
+                logRow(icon: "bed.double.fill", label: "Sleep", value: String(format: "%.1fh", log.sleepHours), detail: "Quality: \(log.sleepQuality)/5")
                 logRow(icon: "brain.head.profile", label: "Stress", value: "\(log.stress)/5", detail: nil)
                 if log.exerciseMinutes > 0 {
                     logRow(icon: "figure.run", label: "Exercise", value: "\(log.exerciseMinutes) min", detail: log.exerciseType.rawValue)

@@ -16,10 +16,35 @@
 		A1000007000000000000001 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000007000000000000001 /* InsightsView.swift */; };
 		A1000008000000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000008000000000000001 /* SettingsView.swift */; };
 		A1000009000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000009000000000000001 /* Assets.xcassets */; };
+		E38541F22F31871D00EDEC5E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38541F12F31871D00EDEC5E /* OnboardingView.swift */; };
+		E38541F42F3187B700EDEC5E /* DailyLogFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38541F32F3187B700EDEC5E /* DailyLogFormView.swift */; };
+		E38541F62F3187C600EDEC5E /* EpisodeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38541F52F3187C600EDEC5E /* EpisodeFormView.swift */; };
+		E38541FA2F3187D800EDEC5E /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38541F72F3187D800EDEC5E /* EpisodesViewModel.swift */; };
+		E38541FB2F3187D800EDEC5E /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38541F92F3187D800EDEC5E /* TodayViewModel.swift */; };
+		E38541FC2F3187D800EDEC5E /* InsightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38541F82F3187D800EDEC5E /* InsightsViewModel.swift */; };
+		E38541FF2F3187E600EDEC5E /* SampleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38541FE2F3187E600EDEC5E /* SampleDataService.swift */; };
+		E38542002F3187E600EDEC5E /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38541FD2F3187E600EDEC5E /* ExportService.swift */; };
+		E38542022F3187F100EDEC5E /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38542012F3187F100EDEC5E /* AccessibilityIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AB000010000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0000001000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6000001000000000000001;
+			remoteInfo = SickDayTracker;
+		};
+		AB000011000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0000001000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6000001000000000000001;
+			remoteInfo = SickDayTracker;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		A3000001000000000000001 /* SickDayTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SickDayTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2000001000000000000001 /* SickDayTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickDayTrackerApp.swift; sourceTree = "<group>"; };
 		A2000002000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2000003000000000000001 /* DailyLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLog.swift; sourceTree = "<group>"; };
@@ -30,8 +55,18 @@
 		A2000008000000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A2000009000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2000010000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3000001000000000000001 /* SickDayTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SickDayTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3000010000000000000001 /* SickDayTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SickDayTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3000011000000000000001 /* SickDayTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SickDayTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E38541F12F31871D00EDEC5E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = Views/OnboardingView.swift; sourceTree = "<group>"; };
+		E38541F32F3187B700EDEC5E /* DailyLogFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyLogFormView.swift; path = Views/Today/DailyLogFormView.swift; sourceTree = "<group>"; };
+		E38541F52F3187C600EDEC5E /* EpisodeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodeFormView.swift; path = Views/Episodes/EpisodeFormView.swift; sourceTree = "<group>"; };
+		E38541F72F3187D800EDEC5E /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodesViewModel.swift; path = ViewModels/EpisodesViewModel.swift; sourceTree = "<group>"; };
+		E38541F82F3187D800EDEC5E /* InsightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsightsViewModel.swift; path = ViewModels/InsightsViewModel.swift; sourceTree = "<group>"; };
+		E38541F92F3187D800EDEC5E /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewModel.swift; path = ViewModels/TodayViewModel.swift; sourceTree = "<group>"; };
+		E38541FD2F3187E600EDEC5E /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExportService.swift; path = Services/ExportService.swift; sourceTree = "<group>"; };
+		E38541FE2F3187E600EDEC5E /* SampleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleDataService.swift; path = Services/SampleDataService.swift; sourceTree = "<group>"; };
+		E38542012F3187F100EDEC5E /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccessibilityIdentifiers.swift; path = Utilities/AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +107,15 @@
 		A5000002000000000000001 /* SickDayTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E38542012F3187F100EDEC5E /* AccessibilityIdentifiers.swift */,
+				E38541FD2F3187E600EDEC5E /* ExportService.swift */,
+				E38541FE2F3187E600EDEC5E /* SampleDataService.swift */,
+				E38541F72F3187D800EDEC5E /* EpisodesViewModel.swift */,
+				E38541F82F3187D800EDEC5E /* InsightsViewModel.swift */,
+				E38541F92F3187D800EDEC5E /* TodayViewModel.swift */,
+				E38541F52F3187C600EDEC5E /* EpisodeFormView.swift */,
+				E38541F32F3187B700EDEC5E /* DailyLogFormView.swift */,
+				E38541F12F31871D00EDEC5E /* OnboardingView.swift */,
 				A2000001000000000000001 /* SickDayTrackerApp.swift */,
 				A2000002000000000000001 /* ContentView.swift */,
 				A5000004000000000000001 /* Models */,
@@ -314,9 +358,18 @@
 				A1000001000000000000001 /* SickDayTrackerApp.swift in Sources */,
 				A1000002000000000000001 /* ContentView.swift in Sources */,
 				A1000003000000000000001 /* DailyLog.swift in Sources */,
+				E38541F42F3187B700EDEC5E /* DailyLogFormView.swift in Sources */,
+				E38542022F3187F100EDEC5E /* AccessibilityIdentifiers.swift in Sources */,
+				E38541F22F31871D00EDEC5E /* OnboardingView.swift in Sources */,
+				E38541F62F3187C600EDEC5E /* EpisodeFormView.swift in Sources */,
 				A1000004000000000000001 /* SicknessEpisode.swift in Sources */,
 				A1000005000000000000001 /* TodayView.swift in Sources */,
 				A1000006000000000000001 /* EpisodesView.swift in Sources */,
+				E38541FF2F3187E600EDEC5E /* SampleDataService.swift in Sources */,
+				E38542002F3187E600EDEC5E /* ExportService.swift in Sources */,
+				E38541FA2F3187D800EDEC5E /* EpisodesViewModel.swift in Sources */,
+				E38541FB2F3187D800EDEC5E /* TodayViewModel.swift in Sources */,
+				E38541FC2F3187D800EDEC5E /* InsightsViewModel.swift in Sources */,
 				A1000007000000000000001 /* InsightsView.swift in Sources */,
 				A1000008000000000000001 /* SettingsView.swift in Sources */,
 			);
@@ -350,23 +403,6 @@
 			targetProxy = AB000011000000000000001 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXContainerItemProxy section */
-		AB000010000000000000001 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0000001000000000000001 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A6000001000000000000001;
-			remoteInfo = SickDayTracker;
-		};
-		AB000011000000000000001 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0000001000000000000001 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A6000001000000000000001;
-			remoteInfo = SickDayTracker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin XCBuildConfiguration section */
 		AC000001000000000000001 /* Debug */ = {
